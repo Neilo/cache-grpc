@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package api;
+option go_package = "versions/v1";
+service Get_Put {
+    rpc Get (GetRequest) returns (GetResponse){}
+    rpc Put (PutRequest) returns (PutResponse){}
+}
+
+message GetRequest{
+    string name = 1;
+}
+
+message GetResponse{
+    string value = 1;
+}
+
+message PutRequest{
+    string name = 1;
+    bytes value = 2;
+}
+
+message PutResponse{
+    string name = 1;
+    bytes value = 2;
+}
+
